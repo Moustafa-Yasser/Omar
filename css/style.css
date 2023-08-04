@@ -1,0 +1,101 @@
+:root {
+  --firstColor: #027373;
+  --secondColor: #038C7F;
+  --thirdColor: #A9D9D0;
+  --forthColor: #F2E7DC;
+  --fifthColor: #0D0D0D;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--forthColor);
+  background-color: var(--firstColor);
+  line-height: 30px;
+  text-transform: capitalize;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.minAl {
+  min-height: 100vh;
+  display: flex;
+}
+
+.minAl .all {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondColor);
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px 0px var(--fifthColor);
+  text-align: center;
+}
+
+.all nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  padding-left: inherit;
+}
+
+
+.all nav ul li a {
+  text-decoration: none;
+  color: var(--forthColor);
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  transition: .2s;
+  border-radius: 5px;
+}
+
+.all nav ul li a:hover,
+.all nav ul li a:active {
+  background-color: var(--firstColor);
+}
+
+/* medium */
+@media (min-width: 768px) {
+  .all {
+    width: 200px;
+    padding: 20px;
+  }
+
+  .all .logo p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .all .logo p {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .all {
+    width: 58px;
+    padding: 10px;
+  }
+
+  .all .logo p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+
+  .all ul li a span {
+    display: none;
+  }
+}
