@@ -24,9 +24,11 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+/* start  */
 .minAl {
   min-height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 
 .minAl .all {
@@ -36,6 +38,7 @@ body {
   border-radius: 10px;
   box-shadow: 1px 1px 20px 0px var(--fifthColor);
   text-align: center;
+  z-index: 1000;
 }
 
 .all nav ul {
@@ -98,4 +101,254 @@ body {
   .all ul li a span {
     display: none;
   }
+}
+
+/* End */
+div h1 {
+  text-align: center;
+  border: 2px solid var(--forthColor);
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20%;
+  width: 150px;
+}
+
+.Profile .box {
+  background-color: var(--secondColor);
+  padding: 20px;
+  margin-top: 100px;
+  position: relative;
+  padding-top: 60px;
+  border-left: 5px solid #027373;
+  animation: scaleOne .9s linear 0s;
+}
+
+@keyframes scaleOne {
+  0% {
+    transform: scale(0) translate(0px, -100px);
+    ;
+  }
+
+  50% {
+    transform: scale(.5) translate(0px, -50px);
+  }
+
+  100% {
+    transform: scale(1) translate(0px, 0px);
+    ;
+  }
+
+}
+
+.Profile .box img {
+  width: 150px;
+  border-radius: 50%;
+  position: absolute;
+  border: 5px solid #038c7f;
+  right: 25px;
+  top: -75px;
+}
+
+/* End Pro */
+/* Start ser */
+.boxser {
+  background-color: var(--secondColor);
+  box-shadow: 0 12px 20px 0 #00000038;
+  padding: 20px;
+  position: relative;
+  margin-top: 30px;
+  animation: scaleOne .9s linear 0s;
+  counter-increment: services;
+  transition: .4s;
+}
+
+.boxser:hover {
+  transform: translateY(-10px);
+  background-color: var(--fifthColor);
+}
+
+.boxser i {
+  font-size: 50px;
+  color: var(--thirdColor);
+}
+
+.boxser .info a {
+  text-decoration: none;
+  color: var(--thirdColor);
+  font-size: 14px;
+  z-index: 1;
+}
+
+.allboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  justify-content: end;
+  background-color: #027373;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -20px;
+  padding: 10px;
+  box-shadow: 0 0 10px 0 #0000004f;
+}
+
+.info::before {
+  content: "0" counter(services);
+  position: absolute;
+  background-color: var(--secondColor);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 12px;
+}
+
+.info::after {
+  content: " ";
+  position: absolute;
+  background-color: #027373;
+  left: 52px;
+  top: 0;
+  height: 100%;
+  width: 40px;
+  transform: skewX(30deg);
+}
+
+/* End ser */
+/* Start Projct */
+.allboxes .boxpro {
+  padding: 15px;
+  background-color: var(--thirdColor);
+  box-shadow: 0px 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+  animation: scaleOne .9s linear 0s;
+
+}
+
+.allboxes .boxpro .photo {
+  overflow: hidden;
+  position: relative;
+}
+
+.allboxes .boxpro .photo:hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 20%);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: 2;
+  animation: flashing .7s;
+}
+
+.allboxes .boxpro .photo img {
+  max-width: 225px;
+  display: block;
+  transition: .2s;
+}
+
+.allboxes .boxpro .photo:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+@keyframes flashing {
+
+  0%,
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
+  }
+}
+
+.Projcts,
+.Profile,
+.Servises,
+.Contact {
+  margin-bottom: 100px;
+}
+
+/* End Projcts */
+/* Start Contact */
+.email {
+  padding: 20px;
+  position: relative;
+  animation: scaleOne .9s linear 0s;
+
+}
+
+.email p {
+  text-align: center;
+  max-width: 330px;
+  margin: auto;
+  font-weight: bold;
+}
+
+.email a {
+  position: absolute;
+  right: 10px;
+  bottom: -30px;
+  text-decoration: none;
+  color: white;
+  background-color: var(--secondColor);
+  padding: 5px;
+  border-radius: 10px;
+  transition: .3s;
+}
+
+.email a:hover {
+  background-color: var(--fifthColor);
+}
+
+hr {
+  margin-top: 60px;
+  border: 1px solid var(--fifthColor);
+  animation: scaleOne .9s linear 0s;
+
+}
+
+.Social {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 35px;
+  animation: scaleOne .9s linear 0s;
+
+}
+
+.Social a {
+  color: var(--thirdColor);
+  font-size: 40px;
+  margin: 10px;
+}
+
+.Social a i {
+  color: var(--forthColor);
+}
+
+.ico {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
